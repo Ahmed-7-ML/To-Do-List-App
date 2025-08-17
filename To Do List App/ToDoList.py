@@ -1,22 +1,29 @@
-from colorama import Fore, Style, init
 from datetime import datetime, date
 import sqlite3
 
-# Initialize colorama
-init(autoreset=True)
+# Try to import colorama, but provide a fallback if it's not installed
+try:
+    from colorama import Fore, Style, init
+    init(autoreset=True)
+    COLORAMA_AVAILABLE = True
+except ImportError:
+    COLORAMA_AVAILABLE = False
 
-# To Color the Status (for console output, not used in Streamlit)
+# Fallback for color_status if colorama is not available
 
 
 def color_status(status):
-    if status.lower() == "in progress":
-        return Fore.YELLOW + status + Style.RESET_ALL
-    elif status.lower() == "finished":
-        return Fore.GREEN + status + Style.RESET_ALL
-    elif status.lower() == "pending":
-        return Fore.CYAN + status + Style.RESET_ALL
+    if COLORAMA_AVAILABLE:
+        if status.lower() == "in progress":
+            return Fore.YELLOW + status + Style.RESET_ALL
+        elif status.lower() == "finished":
+            return Fore.GREEN + status + Style.RESET_ALL
+        elif status.lower() == "pending":
+            return Fore.CYAN + status + Style.RESET_ALL
+        else:
+            return Fore.WHITE + status + Style.RESET_ALL
     else:
-        return Fore.WHITE + status + Style.RESET_ALL
+        return status  # Return plain status if colorama is not available
 
 
 class Tasks:
