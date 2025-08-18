@@ -7,6 +7,47 @@ from ToDoList import Tasks
 task = Tasks()
 st.set_page_config(page_title="To-Do App", page_icon="📝", layout="centered")
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("background-photo.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    /* إضافة طبقة شبه شفافة لتحسين القراءة */
+    .stApp::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); /* طبقة سوداء شبه شفافة */
+        z-index: -1;
+    }
+    /* ضبط لون النصوص والعناصر لتكون واضحة */
+    h1, h2, h3, p, label, .stTextInput>label, .stSelectbox>label, .stButton>button {
+        color: white !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+    /* ضبط لون خلفية مربعات الإدخال لتكون مرئية */
+    .stTextInput>div>input, .stSelectbox>div>select {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: black;
+    }
+    /* ضبط أزرار الحذف لتكون مرئية */
+    .delete-button {
+        background-color: #ff4b4b !important;
+        color: white !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Page Title
 st.title("📝 To Do List")
 
