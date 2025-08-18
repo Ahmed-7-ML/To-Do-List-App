@@ -23,8 +23,7 @@ Developed by **👨‍💻 Eng. Ahmed Akram Amer**, the app ensures persistent s
 ---
 
 ## 📸 Screenshots  
-(Add screenshots of your app here: tab-based interface, task table, or add/update forms)  
-
+<img src = 'backgorind-photo.png'/>
 ---
 
 ## 🛠️ Prerequisites  
