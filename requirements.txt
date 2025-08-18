@@ -1,4 +1,2 @@
 streamlit==1.48.1
 pandas==2.3.1
-sqlite3
-colorama
