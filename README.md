@@ -23,7 +23,7 @@ Developed by **👨‍💻 Eng. Ahmed Akram Amer**, the app ensures persistent s
 ---
 
 ## 📸 Screenshots  
-<img src = 'backgorind-photo.png'/>
+<img src = 'background-photo.png'/>
 ---
 
 ## 🛠️ Prerequisites  
